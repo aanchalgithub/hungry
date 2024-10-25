@@ -1,0 +1,1934 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --bgGray: #f5f5f5;
+  --bgBlue: #34558b;
+  --textBlue: #34558b;
+  --textLightBlack: #151e3f;
+  --textGray: rgba(103, 103, 103, 1);
+  --bgGreen: rgba(56, 142, 60, 1);
+  --bgBrown: rgba(191, 54, 12, 1);
+  --bgRed: #fe0435;
+  --fs-18: 1.125rem;
+  --fs-21: 1.313rem;
+  --fs-30: 1.875rem;
+  --fs-25: 1.563rem;
+  --textGray2: #676767;
+  --textGray3: #707070;
+  --textRed: #fe0435;
+  --text-sm: .8em;
+  --text-md: .9em;
+}
+
+html {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-end-rgb);
+}
+.noStoreFound h4 span .fa {
+  color: var(--textRed);
+}
+
+.noStoreFound h4 {
+  color: #f00;
+}
+
+.bgGray {
+  background: var(--bgGray);
+}
+
+.fs-30 {
+  font-size: var(--fs-30);
+}
+
+.fs-25 {
+  font-size: var(--fs-25);
+}
+
+.fs-18 {
+  font-size: var(--fs-18);
+}
+
+.textBlue {
+  color: var(--textBlue);
+}
+.bgBlue {
+  background-color: var(--bgBlue);
+}
+.radius{
+  border-radius: 13px ;
+}
+.textSm{
+  font-size: var(--text-sm);
+}
+.textMd{
+  font-size: var(--text-md);
+}
+.mob-menu-item{
+ @apply text-base whitespace-nowrap p-2 capitalize;
+ color : #151E3F;
+}
+.mob-menu-item.active{
+  border-bottom: 2px solid #34558b;
+  font-weight: 700;
+}
+.menu-popup-item{
+  @apply text-base p-2;
+}
+.menu-popup-item.active{
+  @apply font-bold;
+  color: #34558b
+}
+.sticky{
+  position: sticky;
+  position: -webkit-sticky;
+}
+.changeText {
+  color: var(--textBlue);
+  border-bottom: 1px solid #34558b;
+  @apply font-bold;
+}
+
+.emptyCart h4 {
+  color: var(--textGray3);
+  @apply font-medium;
+}
+
+.textBlue.Bold {
+  @apply font-bold;
+}
+
+.textSemiBold {
+  @apply font-semibold;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+.siteLogo {
+  max-width: 10rem;
+  @apply w-full mx-auto mb-8;
+}
+
+.userForm {
+  width: 31.75rem;
+  border-radius: 1.875rem;
+  box-shadow: 0px 16px 32px rgba(201, 201, 201, 0.25),
+    0px 0px 2px rgba(175, 175, 175, 0.25);
+  @apply bg-white my-0 mx-auto pt-8 pb-4 px-12 absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* height: calc(100vh - 11rem); */
+}
+
+.formItem:not(:has(label)) {
+  margin-bottom: 1.275rem;
+  position: relative;
+}
+.formItem {
+  margin-bottom: .5rem;
+  position: relative;
+}
+
+label {
+  @apply textMd font-medium block mb-2;
+}
+.formControl,
+input.formControl,
+select.formControl {
+  border-radius: 12px;
+  border: 1px solid #C5C5C5;
+  padding: .8rem .8rem;
+  width: 100%;
+  @apply w-full textMd;
+}
+.read-only .formControl{
+  background-color: #e1e1e1;
+}
+.input-btn{
+  padding: 0 !important;
+}
+.selected-input{
+  padding: 0 !important;
+  border: none !important;
+}
+.otpGroup input {
+  border-bottom: 2px solid #c5c5c5;
+  padding: 0;
+  /* @apply w-full; */
+}
+.ReactFlagsSelect-module_selectOptions__3LNBJ{
+  border-radius: 13px;
+  left: -0.8rem;
+  top: 2rem;
+}
+.otpGroup span {
+  @apply hidden;
+}
+
+.otpGroup div {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr);
+  @apply gap-4;
+}
+
+.otpGroup div input {
+  width: 2em !important;
+}
+
+.formItem.checkBox {
+  @apply flex items-center gap-4;
+}
+
+.formItem.checkBox label {
+  @apply mb-0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  @apply hidden;
+}
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  @apply relative cursor-pointer inline-block mb-0;
+  padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+  border-radius: 13.7px;
+  border: 1px solid #c5c5c5;
+  /* transition: 0.2s ease-in-out; */
+}
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+  padding:0.8rem 2.5rem 0.8rem 0.8rem;
+  border: 1px solid #34558b;
+  color: #151e3f;
+  font-weight: 700;
+}
+/* input[type="radio"]:checked + label::before,
+input[type="checkbox"]:checked + label::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ddd;
+  left: 0.5rem;
+ 
+  @apply absolute;
+} */
+/* input[type="radio"]:checked + label::after,
+input[type="checkbox"]:checked + label::after {
+  content: "";
+  border: solid #34558b;
+  border-width: 0 0.125rem 0.125rem 0;
+  transform: rotate(45deg);
+  z-index: 9;
+  top: 15px;
+  width: 0.5rem;
+  left: 1rem;
+  @apply absolute h-4;
+} */
+/* input[type="radio"]:checked + label::before,
+input[type="checkbox"]:checked + label::before {
+  background: transparent;
+  border: 1px solid #34558b;
+  border-radius: 50%;
+} */
+.radio input[type="radio"] + label {
+  padding: 0;
+  border: none;
+}
+.choose-payment input[type="radio"]:checked + label::before,
+.choose-payment input[type="radio"]:checked + label::after {
+  display: none;
+}
+.choose-payment input[type="radio"] + label {
+  padding: 0.5rem;
+  width: 8rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.choose-payment input[type="radio"]:checked + label {
+  color: #34558b;
+}
+.choose-payment input[type="radio"]:checked + label svg path {
+  fill: #34558b;
+}
+.inputGroup {
+  @apply flex items-center justify-between;
+}
+
+.btn {
+  transition: 0.5s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btnBlue {
+  border-radius: 0.313rem;
+  padding: 0.65rem 0.75rem;
+  @apply text-white w-full inline-block;
+  background: var(--bgBlue);
+}
+
+.otpGroup {
+  @apply flex items-center gap-4;
+}
+
+.justifyCenter {
+  @apply gap-4 justify-center;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.changeLanguage {
+  @apply p-4 text-right;
+}
+
+.changeLanguage select {
+  @apply p-1 cursor-pointer rounded;
+  color: var(--textBlue);
+  border: 1px solid #34558b;
+}
+
+.changeLanguage select option {
+  @apply cursor-pointer;
+}
+
+.forgotPwd a {
+  @apply font-semibold text-base;
+}
+
+.errorField {
+  @apply text-red-500 absolute -bottom-5 right-0 font-semibold;
+  font-size: var(--text-sm);
+}
+
+.onLoading {
+  max-width: 10rem;
+  @apply flex items-center justify-center h-full m-auto w-full;
+}
+
+.logoFullPage {
+  height: 100vh;
+}
+
+/* Home page css Start */
+.pageWrapper.homePage {
+  background-image: url("../public/home-bg.png");
+  /* background-position: 50%; */
+  @apply bg-no-repeat bg-cover bg-center;
+}
+
+.pageWrapper.homePage .grid2 {
+  @apply h-full;
+}
+
+.page_block_wrapper {
+  height: calc(100vh - 11.25rem);
+  @apply overflow-y-auto;
+}
+
+.page_block_wrapper::-webkit-scrollbar {
+  @apply w-0 h-0;
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: center;
+}
+
+/* .footerLogo img {
+  @apply w-full;
+} */
+
+.poweredBy h4 {
+  @apply text-base font-semibold;
+}
+
+.grid2 {
+  @apply grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid3 {
+  @apply grid gap-8;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+:focus-visible {
+  outline: none !important;
+}
+
+.homePage .gridCol {
+  @apply bg-white;
+}
+
+.react-tabs ul {
+  column-gap: 2rem;
+  @apply mb-8 flex items-center;
+}
+
+.react-tabs ul li {
+  font-size: 1.563rem;
+  line-height: 2.5;
+  @apply cursor-pointer font-normal;
+}
+
+.react-tabs ul li.react-tabs__tab--selected {
+  @apply font-bold text-black;
+  border: none;
+}
+.tab-container .react-tabs__tab-panel--selected {
+  height: calc(100vh - 11.25rem);
+  overflow-y: auto;
+  padding: 1.5rem 1rem;
+}
+.tab-container .react-tabs__tab-panel--selected::-webkit-scrollbar {
+  @apply w-0 h-0;
+}
+.nameGroup.alongBtn {
+  @apply flex items-center justify-between;
+}
+
+.nameGroup p {
+  @apply font-normal text-sm;
+}
+
+.react-tabs ul li {
+  color: var(--textGray);
+}
+
+.nameGroup h4 {
+  @apply text-lg font-semibold;
+}
+
+.flexBox {
+  @apply flex items-center;
+}
+
+.justifyBetween {
+  @apply justify-between;
+}
+
+.justifyEnd {
+  @apply justify-end;
+}
+
+.storeDetailList {
+  border-radius: 7px;
+  border: 1px solid var(--Border-Colors-Grey, #e9e9e9);
+  @apply bg-white mb-5 p-5;
+  /* box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15); */
+}
+.scroll-hidden::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+/* .Address::before {
+  content: "\f041";
+  font-family: fontawesome;
+  left: -1.25rem;
+  /* top: 50%;
+  transform: translateY(-50%); */
+/* @apply absolute text-xl;
+  color: var(--textBlue);
+} */
+
+.Address {
+  @apply relative;
+  font-size: 19.51px;
+  font-weight: 600;
+  line-height: 35.77px;
+}
+
+p.Address {
+  @apply font-normal;
+}
+
+.mt--12 {
+  @apply mt-3;
+}
+
+.mb--12 {
+  @apply mb-3;
+}
+
+.mb--0 {
+  @apply mb-0;
+}
+
+.btnBlock .btnBlue {
+  min-width: 11.75rem;
+  @apply text-center rounded-none font-semibold text-lg;
+}
+
+.storeDetailList.close {
+  background: #34558b5c;
+  opacity: 0.5;
+}
+
+.storeDetailList.close .btnBlock .btnBlue {
+  cursor: auto;
+}
+
+/* Home page css End */
+
+/* Home Header Css Start */
+.headerAlign {
+  @apply flex justify-between;
+}
+
+.headerAddress {
+  max-width: 13rem;
+  @apply w-full;
+}
+
+.changeAddress a {
+  @apply font-bold text-base;
+  color: var(--textBlue);
+}
+
+.changeAddress a {
+  border-bottom: 1px solid #34558b;
+}
+
+.headLogo {
+  max-width: 12rem;
+  @apply w-full;
+}
+
+.centerContent,
+.centerSiteWidth {
+  max-width: 70%;
+  @apply w-full;
+}
+
+.pageLayout {
+  max-width: 70%;
+  @apply w-full;
+}
+
+.rightContent {
+  max-width: 30%;
+  @apply w-full;
+}
+
+.rightSideBarWrapper {
+  max-width: 31.875%;
+  @apply w-full;
+}
+
+.rightSideBarWrapper,
+.sideBarWrapper,
+.storeDetailList {
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  @apply bg-white;
+}
+
+.emptyCart .Icon svg {
+  @apply m-auto;
+}
+
+.emptyCart {
+  height: 90%;
+  @apply flex items-center justify-center flex-col;
+}
+
+.footerButton {
+  width: 8.188rem;
+  height: 8.188rem;
+  border-radius: 0.438rem;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  @apply bg-white flex items-center ml-3;
+}
+
+.sideBarWrapper {
+  max-width: 10.5%;
+  @apply w-full bg-white p-4 h-full;
+}
+
+.menuList {
+  @apply overflow-y-auto;
+  height: calc(100vh - 6rem);
+}
+
+.menuList::-webkit-scrollbar {
+  @apply w-0 h-0;
+}
+
+.sideBarWrapper ul {
+  @apply overflow-y-auto pb-8;
+  /* height: 59%; */
+}
+
+.menuCartImage {
+  height: 200px;
+}
+
+.topheader {
+  @apply py-3 px-4 fixed top-0 w-full bg-white;
+  z-index: 10;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* .topheader {
+  padding-left: 14%;
+} */
+
+.pageHeader .flexBox {
+  align-items: inherit;
+}
+
+.backButton .btnGray {
+  min-width: 6rem;
+  width: max-content;
+  background: #e9e9e9;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.438rem;
+  color: var(--textGray2);
+  @apply flex items-center font-semibold justify-center gap-4 text-base;
+}
+
+.headerFlexBox {
+  @apply flex justify-between;
+}
+
+.btnBlue.loginIcon {
+  @apply flex items-center gap-2 text-base font-semibold;
+}
+
+.btnBlue.loginIcon span svg {
+  @apply w-4 h-4;
+}
+
+.cartItem {
+  @apply flex items-center gap-2;
+}
+
+.cartItem svg {
+  @apply w-8 h-8;
+}
+
+.cartItem {
+  color: var(--textLightBlack);
+  @apply font-semibold cursor-pointer text-base;
+}
+
+.countNumber {
+  @apply w-4 h-4 flex items-center justify-center text-white absolute top-0 right-0;
+  background: var(--bgBlue);
+  border-radius: 50%;
+  font-size: 0.875rem;
+}
+
+.cartItem span {
+  @apply relative;
+}
+
+.countNumber span {
+  font-size: 0.75em;
+}
+
+.menuList ul li a,
+.menuList ul li.menuTitle,
+.menu ul li .navBtn {
+  color: var(--textLightBlack);
+  @apply font-normal text-base;
+}
+
+.menuList ul li.menuTitle {
+  @apply font-bold;
+}
+
+.menuList ul li {
+  @apply mb-4;
+  padding: 0 .4rem;
+}
+
+.menuList ul li button {
+  @apply text-base capitalize;
+}
+
+.headerSection {
+  @apply pb-3;
+}
+
+.menuList ul .active {
+  color: var(--textBlue);
+  border-left: 3px solid;
+  
+  @apply pl-1 font-bold;
+}
+
+.rightSideBarWrapper {
+  @apply right-0 w-full h-full;
+  top: 4.35rem;
+  max-width: 26%;
+  transition: all 0.3s ease-in;
+  height: calc(100vh - 4rem);
+}
+
+/* Home Header Css End */
+
+/* Variaton Css Start */
+
+.optionCard label {
+  border: 2px solid #e9e9e9;
+  border-radius: 0.75rem;
+  @apply mb-0;
+}
+
+.variationSection .grid2 {
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+.variation_option .flexBox {
+  @apply px-2 py-4;
+}
+
+.optionCard input[type="radio"],
+.optionCard input[type="checkbox"] {
+  @apply hidden;
+}
+
+.optionCard input[type="radio"] + label,
+.optionCard input[type="checkbox"] + label {
+  @apply relative cursor-pointer m-0 w-full;
+}
+
+.optionCard input[type="radio"]:checked + label p,
+.optionCard input[type="checkbox"]:checked + label p {
+  color: var(--textBlue);
+}
+
+.optionCard input[type="checkbox"] + label::before,
+.optionCard input[type="checkbox"]:checked + label::after {
+  @apply hidden;
+}
+
+.optionCard input[type="radio"]:checked + label,
+.optionCard input[type="checkbox"]:checked + label {
+  border-color: #34558b;
+}
+
+.addedOptionList .headerBlock {
+  background: rgba(20, 102, 250, 0.05);
+  @apply p-3;
+}
+
+.titleHeader h4,
+.itemHeader h4 {
+  @apply font-bold;
+}
+
+.variationWrapper {
+  @apply pb-20;
+}
+
+.variationWrapper .titleHeader {
+  @apply mb-4 mt-6;
+}
+
+.itemHeader {
+  @apply mb-2 w-full;
+  max-width: 14rem;
+}
+
+.cartData {
+  @apply p-3 relative;
+}
+
+.cartData .cartDataHeader {
+  @apply mb-2;
+}
+
+.cartData .cartDataHeader .cartItem {
+  color: var(--textGray3);
+}
+
+.noRadius {
+  @apply rounded-none;
+}
+
+.arrowBtn {
+  min-width: 7rem;
+  @apply w-auto text-center;
+}
+
+.iconBox {
+  @apply w-8 h-8 flex items-center justify-center cursor-pointer rounded;
+  background: #f5f5f5;
+}
+
+.itemSize .Price {
+  @apply font-bold;
+}
+
+.itemSize .sizeDetail {
+  color: var(--textLightBlack);
+  @apply font-medium;
+}
+
+.itemSize .sizeDetail span {
+  color: var(--textGray2);
+}
+
+.repeatItem .itemName {
+  @apply mb-2;
+}
+
+.repeatItem {
+  @apply mb-4;
+}
+
+.deliveryForm {
+  max-width: 60rem;
+  @apply w-full;
+}
+
+.paymentMethod {
+  max-width: 30rem;
+  @apply w-full;
+}
+
+.cartCheckout .siteAlign {
+  padding-left: 7rem;
+}
+
+.buttonWithIcon button {
+  @apply flex items-center justify-between;
+}
+
+.col-50 {
+  max-width: 50%;
+  @apply w-full;
+}
+
+.cardBorder {
+  border-radius: 0.5rem;
+  @apply p-4 bg-white;
+}
+
+.cartCheckout {
+  background: #e9e9e9;
+}
+
+.selectedAddress {
+  border-bottom: 1px solid #ddd;
+  @apply w-full justify-between mb-4 pb-4;
+}
+
+.formGroup {
+  border-bottom: 1px solid #ddd;
+  @apply mb-4;
+}
+
+.cartItem.font-bold {
+  font-weight: 700;
+}
+
+.viewAll {
+  @apply text-center;
+}
+
+.Gray {
+  background: #eee;
+  border-radius: 3rem;
+  @apply py-2 px-3;
+}
+
+.viewAll .Gray {
+  min-width: 6rem;
+}
+
+.cartCheckout .userAddress {
+  max-width: 60%;
+  @apply w-full;
+}
+
+.cartCheckout .userAddress .headerAddress {
+  @apply max-w-full;
+}
+
+.orderSummary .variationWrapper,
+.orderSummary .cartData {
+  @apply px-0;
+}
+
+.singleRow .poweredBy {
+  @apply flex items-center justify-center gap-4;
+}
+
+.singleRow .poweredBy .footerLogo {
+  margin: inherit;
+}
+
+.cartCheckout .siteAlign {
+  padding-top: 5rem;
+  max-width: 85.5rem;
+  @apply m-auto w-full px-4;
+}
+
+/* .noSideBar .topheader {
+  @apply pl-0;
+} */
+
+/* .formItem svg {
+  width: 1.875rem;
+  height: 1.875rem;
+} */
+
+.cardHeadWrapper {
+  @apply flex justify-between;
+}
+
+.cardHeadWrapper .AsyncImage-root {
+  max-width: 6rem;
+  @apply w-full h-16;
+}
+
+.cardDetail {
+  @apply flex flex-col h-full mb-0;
+}
+
+.cardDetail .priceWrap {
+  @apply mt-auto;
+}
+
+.selectTab .react-tabs__tab {
+  @apply p-4 font-bold text-center text-base;
+  color: #000;
+  line-height: 1;
+  background: var(--bgGray);
+  min-width: 10rem;
+}
+
+.selectTab .react-tabs ul li.react-tabs__tab--selected,
+.react-tabs__tab--selected {
+  @apply text-white;
+  border: none !important;
+  border-radius: 0 !important;
+  background: var(--bgBlue);
+  bottom: 0 !important;
+}
+
+.orderDetail {
+  border-radius: 0.625rem;
+  box-shadow: 0px 5.617px 11.233px 0px rgba(0, 0, 0, 0.15);
+  padding: 1.125rem;
+  @apply bg-white;
+}
+
+.selectTab ul {
+  @apply gap-0;
+  border: none;
+}
+
+.addressRow {
+  @apply flex gap-4;
+}
+
+.addressRow .addressType {
+  max-width: 30%;
+  color: #565656;
+  @apply font-normal w-full text-base;
+}
+
+.addressRow .addressName {
+  color: #000;
+  @apply font-medium text-base;
+}
+
+.addressRow:not(:last-child) {
+  @apply mb-2;
+}
+
+.addressDetail {
+  border: 1px solid #bfbfbf;
+  @apply p-4 mb-6 rounded-lg;
+}
+
+.iconGroup .iconType {
+  @apply cursor-pointer;
+}
+
+.profileDetail .arrowBtn {
+  min-width: 15rem;
+  @apply flex items-center justify-center;
+}
+
+.profileDetail .arrowBtn span {
+  @apply pr-4 text-lg;
+}
+
+.Quantity {
+  @apply relative;
+}
+
+.Quantity span {
+  max-width: 1.25rem;
+  border-radius: 50%;
+  top: -0.25rem;
+  font-size: 0.75rem;
+  background: var(--bgBlue);
+  @apply w-full flex justify-center items-center absolute right-0 text-white h-5;
+}
+
+.repeatItem .myCart {
+  max-width: 65%;
+  align-items: baseline;
+  @apply w-full;
+}
+
+.repeatItem .allIcons {
+  max-width: 35%;
+  @apply w-full;
+}
+
+.allCounterButton {
+  @apply flex items-center justify-evenly w-full gap-4;
+  max-width: 8rem;
+}
+
+.addItem {
+  max-width: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  @apply h-8 w-full flex justify-center items-center;
+}
+
+.sideBarWrapper ul::-webkit-scrollbar {
+  @apply w-0 h-0;
+}
+
+.Profile {
+  max-width: 3rem;
+  @apply h-12 w-full;
+}
+
+.dropDown {
+  @apply cursor-pointer;
+}
+
+.dropDownList {
+  @apply absolute bg-white p-2 right-0 shadow-md rounded-md;
+  width: 11rem;
+}
+
+.Profile img {
+  @apply w-full;
+}
+
+.dropDown .dropDownList ul li a,
+.dropDown .dropDownList ul li span {
+  font-size: 14px;
+  @apply w-full inline-block font-normal p-1;
+  color: #767676;
+}
+
+.radioList {
+  @apply flex items-center;
+}
+
+.radioList .radioItem {
+  @apply pr-12 flex items-center;
+}
+
+.radioList .radioItem input[type="radio"] {
+  display: none;
+}
+
+.radioList .radioItem input[type="radio"] + label {
+  @apply relative ml-8;
+}
+
+.radioList .radioItem input[type="radio"] + label::before {
+  content: "";
+  left: -1.875rem;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  @apply absolute w-5 h-5 cursor-pointer;
+}
+
+.radioList .radioItem input[type="radio"]:checked + label::before {
+  background: var(--bgBlue);
+}
+
+.radioList .radioItem input[type="radio"]:checked + label::after {
+  content: "";
+  top: 0.25rem;
+  left: -1.35rem;
+  width: 0.438rem;
+  height: 0.875rem;
+  border: solid #fff;
+  border-width: 0 0.125rem 0.125rem 0;
+  transform: rotate(45deg);
+  background: var(--bgBlue);
+  @apply absolute;
+}
+
+.btnBlue2 {
+  background: var(--textLightBlack);
+}
+
+.customTab .react-tabs__tab-list li {
+  @apply bg-transparent;
+  border: none !important;
+}
+
+.customTab .react-tabs__tab-list {
+  border: none;
+}
+
+.customTab .react-tabs__tab-list .react-tabs__tab--selected {
+  border-bottom: none !important;
+}
+.tab-list {
+  display: inline-flex;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18.52px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #00000073;
+  box-shadow: 0px 20.15px 44.77px 0px #d3d1d840;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #d7d7d7;
+}
+.address-container .tab-list {
+  display: inline-flex;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18.52px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #00000073;
+  box-shadow: 0px 20.15px 44.77px 0px #d3d1d840;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #d7d7d7;
+}
+.address-container .tab-list li {
+  padding: 0.5rem 2rem;
+}
+.address-container .tab-list .react-tabs__tab--selected {
+  background-color: rgba(20, 102, 250, 0.15);
+  color: #34558b;
+}
+.tab-list li {
+  padding: 0.2rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: center;
+}
+.tab-list .react-tabs__tab--selected {
+  background-color: #34558b;
+  color: #fff;
+}
+.tab-list .react-tabs__tab--selected svg path {
+  fill: white;
+}
+
+.customTab .react-tabs__tab:focus:after {
+  @apply hidden;
+}
+
+.orderDetail {
+  border-radius: 0.625rem;
+  background: #fff;
+  box-shadow: 0px 5.617px 11.233px 0px rgba(0, 0, 0, 0.15);
+  padding: 1.125rem;
+}
+
+.orderTitle .itemName h4 {
+  font-size: 1.25rem;
+  @apply font-bold;
+}
+
+.orderTitle {
+  @apply mb-4;
+}
+
+.itemDetail .itemImage {
+  max-width: 10rem;
+  @apply w-full;
+}
+
+.itemDetail .itemQuty {
+  max-width: 30rem;
+  @apply w-full;
+}
+
+.itemDetail .itemPrice {
+  max-width: 10rem;
+  @apply w-full text-right;
+}
+
+.itemQuty p {
+  font-size: 1.375rem;
+}
+
+.itemDetail .flexBox {
+  column-gap: 1rem;
+}
+
+.orderButton {
+  @apply w-full mt-6;
+}
+
+.orderButton .btnBorderBlue {
+  @apply w-full inline-block;
+  border-radius: 0.25rem;
+  padding: 0.875rem;
+}
+
+.itemPrice h4,
+.itemDetail .itemQuty p,
+.itemDetail .itemPrice p {
+  color: var(--textGray2);
+}
+
+.orderDetail .itemPrice h4 {
+  @apply font-normal;
+  font-size: 1.25rem;
+}
+
+/* Variaton Css End */
+
+/* Search bar css Start */
+.searchBox {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  @apply flex items-center mt-2 px-2;
+  padding: 0.45rem;
+}
+
+.searchBox .searchField {
+  max-width: 80%;
+  @apply flex items-center w-full pl-2;
+}
+
+.searchField input.formControl {
+  @apply pl-0 border-0;
+}
+
+.searchField .Address::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.inputField {
+  @apply w-full;
+}
+
+.searchBox .selectField {
+  border-right: 1px solid #151e3f;
+  @apply pr-2;
+}
+
+.selectField select {
+  font-size: var(--fs-18);
+}
+
+.closeBtn {
+  @apply cursor-pointer;
+}
+
+.variationWrapper {
+  height: calc(100vh - 8rem);
+  @apply overflow-y-auto;
+}
+
+.variationWrapper::-webkit-scrollbar {
+  @apply w-0 h-0;
+}
+
+.pricingFooter {
+  @apply flex justify-between items-center;
+}
+
+.rightFooter {
+  /* box-shadow: 0px -4px 8px 0px rgba(20, 102, 250, 0.15); */
+  z-index: 10;
+  @apply p-4 absolute w-full left-0 bottom-0 bg-white;
+}
+
+.addedOptionList {
+  @apply relative;
+}
+
+/* Search bar css End */
+
+/* Card item css Start */
+.cart__offers li {
+  @apply mb-3;
+}
+
+.offer__select label {
+  width: 92%;
+}
+
+.editOptions {
+  @apply mt-2 justify-end;
+}
+
+.cart__offers ul li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.offer__select input[type="checkbox"] {
+  @apply hidden;
+}
+
+.offer__select input[type="checkbox"] {
+  border: 0.125rem solid #000;
+  height: 1.6875rem;
+  width: 1.6875rem;
+  border-radius: 0.25rem;
+}
+
+.offer__select label {
+  border: 0.0625rem solid #000;
+  line-height: 1;
+  border-radius: 1.875rem;
+  padding: 0.65rem;
+  @apply items-center flex;
+}
+
+.offer__select label {
+  @aplly cursor-pointer gap-4 font-bold;
+}
+
+.offer__select .add__offer,
+.offer__select .remove__offer {
+  @apply relative w-5 h-5;
+}
+
+.offer__select .remove__offer {
+  @apply hidden;
+}
+
+.offer__select .remove__offer img {
+  @apply w-full h-full;
+}
+
+.offer__select .add__offer {
+  display: inline-block;
+}
+
+.offer__select span.offer__price span {
+  text-decoration: line-through;
+  margin-right: 0.75rem;
+  @apply font-bold;
+}
+
+.offer__select input[type="checkbox"]:checked ~ label {
+  background-color: var(--bgBlue);
+  border-color: #34558b;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.offer__select input[type="checkbox"] + label::before {
+  @apply hidden;
+}
+
+.offer__select input[type="checkbox"] + label {
+  @apply flex items-center justify-between;
+}
+
+.offer__select label {
+  margin-left: 0 !important;
+  @apply w-full;
+}
+
+/* .offer__select {
+  border-bottom: 1px solid #ddd;
+} */
+.siteAlign {
+  padding-left: 14%;
+  padding-top: 5.5rem;
+  padding-right: 2rem;
+  @apply pb-8 flex gap-4;
+}
+
+.secTitle {
+  color: var(--textLightBlack);
+  @apply font-bold capitalize text-base;
+}
+
+.secTitle {
+  @apply text-base;
+}
+
+.sortType {
+  max-width: 1.25rem;
+  @apply w-full h-5 flex items-center justify-center mb-4;
+  border: 1px solid;
+}
+
+.cardWrapper .menuCard {
+  @apply mt-4;
+}
+
+.sortType.Veg .circleSize {
+  background: var(--bgGreen);
+}
+
+.sortType.nonVeg .circleSize {
+  background: var(--bgBrown);
+}
+
+.sortType.Veg {
+  border-color: rgba(56, 142, 60, 1);
+}
+
+.sortType.nonVeg {
+  border-color: rgba(191, 54, 12, 1);
+}
+
+.sortType .circleSize {
+  @apply w-3 h-3;
+  border-radius: 50%;
+}
+
+.cardTitle {
+  @apply textSm font-bold w-full text-[#151E3F];
+  word-break: break-all;
+  margin-bottom: 0.5rem;
+}
+
+.cardDesciption {
+  @apply textSm;
+  color: #676767;
+}
+
+.readMore {
+  color: var(--textBlue);
+  @apply cursor-pointer;
+}
+
+.itemPrice {
+  font-size: var(--fs-21);
+  @apply font-medium;
+}
+
+.priceWrap {
+  @apply flex items-center justify-between mt-5;
+}
+
+.btnBorderBlue {
+  color: var(--textBlue);
+  background-color: rgba(20, 102, 250, 0.1);
+  min-width: 7rem;
+  @apply text-center py-2 px-3 font-semibold;
+}
+
+.btnBorderRed {
+  border: 1px solid #fa2d09;
+  color: var(--textRed);
+  min-width: 7rem;
+  cursor: not-allowed;
+  @apply text-center py-2 px-3 font-semibold;
+}
+
+.titleBlue {
+  @apply text-base font-semibold;
+  color: var(--textBlue);
+}
+
+.secWrapper {
+  @apply py-4;
+}
+
+/* Card item css End */
+
+/* Page not found css Start */
+.pageNotFOund {
+  max-width: 50rem;
+  @apply w-full m-auto text-center mt-20;
+}
+
+.pageNotFOund .iconBlock {
+  font-size: 5rem;
+  color: var(--textBlue);
+}
+
+.pageNotFOund h2 {
+  color: var(--textGray);
+  @apply text-3xl font-bold;
+}
+
+.poweredBy {
+  @apply text-center;
+}
+
+/* Page not found css End */
+
+/* Profile Page Css Start */
+.profileImage input[type="file"] {
+  @apply hidden;
+}
+
+.settingsView {
+  max-width: 50rem;
+  @apply w-full my-8 mx-auto;
+}
+
+.showProfile {
+  width: 80px;
+  height: 80px;
+  @apply rounded-full;
+  background-color: #cee0ff;
+  display: flex;
+}
+
+.showProfile span {
+  @apply flex items-center;
+}
+
+.addImage {
+  max-width: 10rem;
+  @apply text-center w-full;
+}
+
+.addImage span {
+  @apply flex items-center justify-center cursor-pointer;
+}
+
+.showProfile img {
+  @apply rounded-full;
+  padding: 1rem;
+}
+
+/* Profile Page Css End */
+
+/* @media screen and (min-width: 120rem) {
+  html{ */
+/* font-size: 1.155vw; */
+/* font-size: 0.88vw;
+  }
+} */
+
+/* New Popup Css */
+.ReactModal__Content.ReactModal__Content--after-open.confirmation {
+  @apply overflow-y-auto;
+  /* height: 70%; */
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.confirmation .modalHeader {
+  background: var(--bgBlue);
+  color: #fff !important;
+}
+
+.modalHeader {
+  @apply flex items-center justify-between p-8 mb-6;
+}
+
+.modalHeader.center .headerTitle {
+  font-size: 1.875rem;
+  @apply w-full text-center font-semibold;
+}
+
+.modalBody {
+  @apply p-8 text-center;
+}
+
+.tryAgain {
+  border: 2px solid #f5003f;
+  border-radius: 0.75rem;
+  min-width: 10rem;
+  color: var(--textRed);
+  @apply p-4 font-semibold text-xl;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background: rgb(0 0 0 / 60%) !important;
+  z-index: 999;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.confirmation.cartItemPopup {
+  max-width: 69.65rem;
+  height: 40rem;
+  @apply p-10;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  max-width: 51.125rem;
+  border-radius: 1.438rem;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  @apply w-full h-auto absolute;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.confirmation.cartItemPopup
+  .modalBody
+  .grid--2 {
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.imgBlock {
+  height: 32.37rem;
+  @apply relative overflow-hidden;
+}
+
+.imgBlock img {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @apply absolute w-full h-full rounded-2xl object-cover;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.confirmation.cartItemPopup
+  .modalBody
+  .card--img--desc {
+  @apply pl-10;
+}
+
+.customModal {
+  max-width: 830px !important;
+  width: 100% !important;
+  border-radius: 8px;
+  padding: 0 !important;
+}
+.modal-close {
+  background-color: none;
+  border-radius: 50%;
+  border: 2px solid;
+}
+.react-responsive-modal-closeButton {
+  top: 7px;
+  right: 14px;
+}
+.burger {
+  display: none;
+}
+@media screen and (min-width: 112.5rem) {
+  html {
+    font-size: 0.833vw;
+  }
+}
+
+/* nitesh ... */
+.logoText {
+  font-weight: bold;
+}
+.sideBarWrapper .sideBarLogo svg {
+  display: none;
+}
+.addressDetail .addressRow label,
+.addressDetail .formItem label {
+  margin: 0;
+  min-width: 100px;
+}
+.addressDetail .formItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.add-address-modal {
+  max-width: 800px !important;
+  width: 100%;
+  border-radius: 10px;
+}
+.radio input[type="radio"] {
+  display: block;
+}
+.radio input[type="radio"] + label::before,
+.radio input[type="radio"] + label::after {
+  display: none;
+}
+.radio input[type="radio"] + label {
+  margin: 0;
+}
+.profile-sidebar li.active {
+  color: #34558b;
+}
+.profile-sidebar li:hover svg path,
+.profile-sidebar li.active svg path {
+  stroke: #34558b !important;
+  fill: #34558b !important;
+}
+/* new ui */
+.store-card {
+  box-shadow: 0px 0px 45px 0px rgba(223, 223, 223, 1);
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 1.3rem;
+  background-color: #fff;
+}
+.store-card.menu {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  width: 43rem;
+}
+.store-card.checkout {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+.nameGroup h4 {
+  color: #000;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.029px;
+}
+.nameGroup p {
+  color: #181e27;
+  text-align: right;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.sky-dim-btn {
+  border-radius: 14.571px;
+  background: rgba(20, 102, 250, 0.1);
+  color: #34558b;
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0.4rem 2rem;
+}
+.btn-secondary {
+  padding: 10px 55px;
+  border-radius: 0.313rem;
+  background: #34558b;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9em;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.btn-secondary-sm {
+  padding: 6px;
+  border: 1px solid #34558b;
+  border-radius: 0.213rem;
+  background: #ffffff;
+  color: #34558b;
+  text-align: center;
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  min-width: 5rem;
+}
+.store-banner {
+  background-image: url("/public/images/bg.jpg");
+  height: 9rem;
+  background-size: cover;
+}
+.react-responsive-modal-modal.menu-popup {
+  height: 400px;
+  width: 150px;
+  right: 35%;
+  left: auto;
+  top: 46%;
+}
+/* responsive css start */
+@media only screen and (max-width: 767px) {
+  .userForm {
+    padding-inline: 2rem;
+  }
+  .otpGroup input {
+    padding: 0.275rem;
+  }
+  .otpGroup div {
+    gap: 0.5rem;
+  }
+  .sideBarWrapper {
+    left: -250px;
+    max-width: 15rem;
+    transition: all 0.3s ease-in;
+    padding: 0;
+  }
+
+  .sideBarWrapper.show {
+    left: 0px;
+    padding: 0.5rem;
+  }
+  .sideBarWrapper .sideBarLogo svg {
+    display: block;
+  }
+  .burger {
+    display: block;
+    position: absolute;
+    top: 34%;
+    left: 1rem;
+    font-size: 1rem;
+  }
+  .grid3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .rightSideBarWrapper {
+    display: none;
+  }
+  .siteAlign {
+    padding-inline: 4%;
+    padding-top: 5rem;
+  }
+
+  .customModal,
+  .add-address-modal {
+    width: 100% !important;
+    margin: 0;
+    height: 100%;
+    border-radius: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+  .modal-close {
+    width: 24px;
+    height: 24px;
+  }
+  .react-tabs ul li {
+    font-size: 1rem;
+  }
+  .react-tabs ul {
+    margin-bottom: 1rem;
+  }
+  .react-responsive-modal-closeButton {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+  }
+  .pageLayout {
+    max-width: 100%;
+  }
+  .cartCheckout .siteAlign {
+    flex-wrap: wrap;
+  }
+  .headerAddress {
+    max-width: 100%;
+  }
+
+  .userForm {
+    width: 86%;
+    left: 50%;
+    top: 40%;
+    height: auto;
+  }
+
+  .emptyCart .Icon svg {
+    margin: auto;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .emptyCart {
+    height: auto;
+  }
+
+  .closeBtn svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .addItem svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .variationWrapper {
+    height: calc(100vh - 6rem);
+  }
+
+  .rightSideBarWrapper {
+    position: fixed;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+    top: 4.35rem;
+    max-width: 0%;
+    transition: all 0.3s ease-in;
+  }
+
+  .rightSideBarWrapper {
+    /* display: block; */
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 50;
+  }
+  .store-card.menu {
+    border-radius: 0;
+    width: auto;
+    margin: 0;
+  }
+  .store-banner {
+    height: auto;
+  }
+  .tab-container,
+  .tab-list,
+  .tab-list li {
+    width: 100%;
+  }
+  .tab-list li {
+    padding: 0.5rem 1.5rem;
+  }
+  .ReactModal__Content.ReactModal__Content--after-open.confirmation {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    top: auto;
+    bottom: -20vh;
+    height: 250px;
+  }
+  .topheader {
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+  }
+  .store-card.checkout {
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+  .rightFooter {
+    position: fixed;
+    bottom: 0;
+  }
+.overflow-y-auto{
+  -webkit-overflow-scrolling: touch;
+}
+
+}
+
+/* responsive css end */

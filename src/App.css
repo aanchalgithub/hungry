@@ -1,38 +1,38 @@
-.App {
+button:disabled {
+  cursor: not-allowed;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    color 0.15s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-success:focus,
+.btn-success.focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-success:active,
+.btn-success.active {
+  background-color: #1e7e34;
+  border-color: #1c7430;
 }
